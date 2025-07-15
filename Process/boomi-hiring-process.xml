@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><Component xmlns:bns="http://api.platform.boomi.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" branchId="Qjo1MDc2MjQ" branchName="main" componentId="4d1108b7-70d2-4c98-9057-91c0795dc2a0" createdBy="24h51a05k2@cmrcet.ac.in" createdDate="2025-07-15T06:09:28Z" currentVersion="true" deleted="false" folderFullPath="Self-Learning" folderId="Rjo3ODAzMTkw" folderName="Self-Learning" modifiedBy="24h51a05k2@cmrcet.ac.in" modifiedDate="2025-07-15T06:09:28Z" name="New Process 5" type="process" version="1">
+  <bns:encryptedValues/>
+  <bns:description/>
+  <bns:object>
+    <process allowSimultaneous="false" enableUserLog="false" processLogOnErrorOnly="false" purgeDataImmediately="false" updateRunDates="true" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start" userlabel="&quot;Read from Mock API&quot;" x="96.0" y="94.0">
+          <configuration>
+            <connectoraction actionType="Get Candidate Data" allowDynamicCredentials="NONE" connectionId="ea9ee2be-c470-430b-954a-2bd9ac4cd49a" connectorType="officialboomi-X3979C-hiring-demo" hideSettings="false" operationId="ef85407b-cc1f-449d-a715-16debeec3fb7">
+              <parameters/>
+              <dynamicProperties/>
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape2" x="336.0" y="88.0"/>
+          </dragpoints>
+        </shape>
+        <shape image="message_icon" name="shape2" shapetype="message" userlabel="Log Candidate Info" x="352.0" y="80.0">
+          <configuration>
+            <message combined="true">
+              <msgTxt>New candidate received: Name = {1}, Email = {2}, Job Title = {3}
+</msgTxt>
+              <msgParameters>
+                <parametervalue key="0" valueType="profile">
+                  <profileelement elementId="5" elementName="firstname (Root/Array/ArrayElement1/Object/firstname)" profileId="16426352-0f09-4db7-a92e-d4cadb17d7d9" profileType="profile.json"/>
+                </parametervalue>
+              </msgParameters>
+            </message>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape2.dragpoint1" toShape="shape3" x="608.0" y="72.0"/>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape3" shapetype="stop" userlabel="End Proces" x="624.0" y="64.0">
+          <configuration>
+            <stop continue="true"/>
+          </configuration>
+          <dragpoints/>
+        </shape>
+      </shapes>
+    </process>
+  </bns:object>
+  <bns:processOverrides/>
+</Component>
