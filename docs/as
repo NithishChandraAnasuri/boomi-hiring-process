@@ -1,1 +1,60 @@
-as
+# Boomi Hiring Process – Technical Overview
+
+## 📌 Objective
+
+To create a Boomi integration process that reads mock applicant data from a connector and logs a formatted message with their personal and job details.
+
+---
+
+## 🔁 Flow Steps
+
+1. **Start Step**
+   - Type: Connector
+   - Connector: `Demo - Boomi Hiring`
+   - Operation: `Demo - Boomi Hiring Connector Operation`
+
+2. **Message Step**
+   - Display Name: `Log Candidate Info`
+   - Message:  
+     ```
+     New candidate received: Name = {1}, Email = {2}, Job Title = {3}
+     ```
+   - Variables from profile:
+     - `{1}` → `firstname`
+     - `{2}` → `lastname`
+     - `{3}` → `openjob`
+
+3. **Stop Step**
+   - Display Name: `End Process`
+   - Behavior: `End and continue`
+
+---
+
+## 📥 Input Profile
+
+- Type: JSON
+- Profile: `Boomi Hiring - Applicant Info Profile`
+- Root → firstname, lastname, department, openjob
+
+---
+
+## 🚀 Deployment
+
+- Created `Packaged Component`
+- Deployed to `Dev` environment
+- Version: `v1.0`
+
+---
+
+## 📸 Screenshots
+
+- See `screenshots/hiring-flow.png`
+- See `screenshots/deployment-success.png`
+
+---
+
+## 💡 Notes
+
+- Built on Free Trial version of Boomi
+- No Atom installed; designed for GitHub showcasing
+
