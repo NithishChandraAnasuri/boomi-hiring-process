@@ -1,0 +1,14 @@
+[
+  {
+    "firstname": "Jane",
+    "lastname": "Doe",
+    "department": "Engineering",
+    "openjob": "Software Engineer"
+  },
+  {
+    "firstname": "John",
+    "lastname": "Smith",
+    "department": "Marketing",
+    "openjob": "Marketing Analyst"
+  }
+]
